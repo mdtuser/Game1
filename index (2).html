@@ -3,356 +3,411 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Tips E-Sports - বাংলাদেশের সেরা ফ্রি ফায়ার টুর্নামেন্ট অ্যাপ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Tips E-Sports - বাংলাদেশের প্রথম ও সেরা ফ্রি ফায়ার টুর্নামেন্ট ও লার্নিং অ্যাপ। দৈনিক টুর্নামেন্ট, রিয়েল প্রাইজ, প্রো টিপস সব এক জায়গায়!">
+    <title>Tips E-Sports - বাংলাদেশের #১ ই-স্পোর্টস অ্যাপ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
+        :root {
+            --primary: #ff3366;
+            --primary-dark: #cc0044;
+            --accent: #ff6b6b;
+            --dark: #0f0c29;
+            --dark-light: #1a173f;
+            --text: #ffffff;
+            --text-light: #e0e0ff;
+            --shadow: 0 10px 30px rgba(255,51,102,0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Noto Sans Bengali', sans-serif;
-            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-            color: #fff;
+            background: linear-gradient(135deg, var(--dark) 0%, #1e1b4b 100%);
+            color: var(--text);
             line-height: 1.6;
             min-height: 100vh;
         }
-        .container { max-width: 420px; margin: 0 auto; padding: 0 15px; }
-        
-        /* লোগো সেকশন */
-        .logo-section {
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* Sticky CTA */
+        .sticky-cta {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15,12,41,0.92);
+            backdrop-filter: blur(12px);
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255,51,102,0.2);
             text-align: center;
-            padding: 20px 0 10px;
         }
-        .logo-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #ff416c;
-            box-shadow: 0 0 25px rgba(255,65,108,0.7);
-            margin: 0 auto 10px;
-            display: block;
-        }
-        
-        /* ওপেন অ্যাপ বাটনের স্টাইল - আপডেট করা হয়েছে */
-        .open-app-btn {
-            display: inline-block;
-            background: linear-gradient(90deg, #ff416c, #ff4b2b);
+
+        .cta-btn {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
             color: white;
-            font-size: 1.4em;
-            font-weight: 700;
-            padding: 12px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            letter-spacing: 1px;
-            margin-top: 10px;
             border: none;
+            padding: 16px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 8px 20px rgba(255,65,108,0.5);
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
             transition: all 0.3s ease;
-            border: 2px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
-        
-        .open-app-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255,65,108,0.8);
-            background: linear-gradient(90deg, #ff4b2b, #ff416c);
+
+        .cta-btn:hover, .cta-btn:active {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,51,102,0.5);
         }
-        
+
         header {
             text-align: center;
-            padding: 10px 0 15px;
+            padding: 40px 0 20px;
         }
-        .brand-title {
-            font-size: 2.2em;
+
+        .logo {
+            font-size: 3.2rem;
             font-weight: 700;
-            background: linear-gradient(90deg, #ff416c, #ff4b2b);
+            background: linear-gradient(90deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 5px;
-        }
-        .subtitle {
-            font-size: 1.15em;
-            opacity: 0.9;
-            margin-bottom: 25px;
-        }
-        .hero {
-            text-align: center;
-            padding: 20px 0;
-        }
-        .video-container {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%;
-            margin: 0 auto 30px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 12px 35px rgba(255,65,108,0.4);
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
-            margin: 30px 0;
-            text-align: center;
-        }
-        .stat {
-            background: rgba(255,255,255,0.08);
-            padding: 18px 12px;
-            border-radius: 16px;
-            border: 1px solid rgba(255,65,108,0.2);
-        }
-        .stat-number {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: #ff4b2b;
-        }
-        .features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            margin: 35px 0;
-        }
-        .feature {
-            background: rgba(255,255,255,0.07);
-            padding: 18px;
-            border-radius: 16px;
-            text-align: center;
-        }
-        .feature i { font-size: 2.5em; color: #ff416c; margin-bottom: 10px; }
-        .section-title {
-            text-align: center;
-            font-size: 1.7em;
-            color: #ff4b2b;
-            margin: 40px 0 25px;
-            font-weight: 700;
-        }
-        .tournament-grid {
-            display: grid;
-            gap: 18px;
-            margin-bottom: 50px;
-        }
-        .tournament-card {
-            background: rgba(255,255,255,0.06);
-            padding: 22px;
-            border-radius: 16px;
-            border-left: 6px solid #ff416c;
-            transition: transform 0.3s;
-        }
-        .tournament-card:hover { transform: translateY(-8px); }
-        .t-card-title {
-            font-size: 1.3em;
-            font-weight: 700;
             margin-bottom: 12px;
-            color: #ffd0d0;
         }
-        .t-card-desc {
-            opacity: 0.93;
-            font-size: 1em;
-        }
-        .extra-download {
-            text-align: center;
-            margin: 30px 0 40px;
-        }
-        .extra-download p {
-            font-size: 1.2em;
-            font-weight: 700;
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
             margin-bottom: 20px;
-            background: linear-gradient(90deg, #ff416c, #ff4b2b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
-        .glow-btn {
+
+        /* নতুন ছোট ওয়েব অ্যাপ বাটন */
+        .webapp-btn-container {
+            text-align: center;
+            margin: 0 0 40px 0;
+        }
+
+        .webapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(90deg, #4f46e5, #7c3aed);
+            color: white;
+            padding: 12px 28px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(79,70,229,0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .webapp-btn:hover, .webapp-btn:active {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(79,70,229,0.6);
+            background: linear-gradient(90deg, #7c3aed, #4f46e5);
+        }
+
+        .webapp-btn i {
+            font-size: 1.3rem;
+        }
+
+        /* Extra Download Section */
+        .extra-cta {
+            text-align: center;
+            margin: 20px 0 40px;
+        }
+
+        .extra-cta p {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--accent);
+        }
+
+        .glow-cta {
             position: relative;
-            background: linear-gradient(90deg, #ff416c, #ff4b2b, #ff416c);
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
             background-size: 200% 100%;
             color: white;
             border: none;
-            padding: 20px 0;
-            font-size: 1.5em;
+            padding: 18px;
+            font-size: 1.4rem;
             font-weight: 700;
             border-radius: 60px;
             cursor: pointer;
             width: 100%;
-            max-width: 380px;
+            max-width: 400px;
             margin: 0 auto;
-            box-shadow: 0 0 30px rgba(255,65,108,0.7),
-                        inset 0 0 20px rgba(255,255,255,0.2);
+            box-shadow: 0 0 40px rgba(255,51,102,0.5);
             transition: all 0.4s ease;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
         }
-        .glow-btn::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
-        .glow-btn:hover::before {
-            opacity: 1;
-        }
-        .glow-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 60px rgba(255,65,108,1),
-                        0 0 100px rgba(255,75,43,0.6);
+
+        .glow-cta:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 70px rgba(255,51,102,0.7);
             background-position: right center;
         }
-        .glow-btn i {
-            animation: bounce 2s infinite;
+
+        /* বাকি স্টাইলগুলো আগের মতোই রাখা হয়েছে (video, stats, features, tournament, footer) */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
         }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 40px 0;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.05);
+            padding: 20px 12px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid rgba(255,51,102,0.15);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.04);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin: 50px 0 30px;
+            font-weight: 700;
+        }
+
+        .tournament-list {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .tournament-item {
+            background: rgba(255,255,255,0.05);
+            padding: 24px;
+            border-radius: 16px;
+            border-left: 5px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .tournament-item:hover {
+            transform: translateY(-6px);
+        }
+
+        .t-item-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+
         footer {
             text-align: center;
-            padding: 40px 0 60px;
-            opacity: 0.85;
-            font-size: 0.95em;
+            padding: 50px 0 80px;
+            opacity: 0.8;
+            font-size: 0.95rem;
         }
-        .whatsapp-btn {
+
+        .support-btn {
             background: #25D366;
             color: white;
-            padding: 16px 35px;
+            padding: 16px 40px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 12px;
             margin-top: 20px;
-            box-shadow: 0 6px 20px rgba(37,213,102,0.5);
+            box-shadow: 0 8px 25px rgba(37,213,102,0.4);
             transition: all 0.3s;
         }
-        .whatsapp-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(37,213,102,0.7);
+
+        .support-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(37,213,102,0.6);
         }
+
         @media (min-width: 500px) {
-            .container { max-width: 500px; padding: 0 25px; }
-            .stats { grid-template-columns: repeat(4, 1fr); }
+            .container { max-width: 520px; padding: 0 24px; }
+            .stats-grid, .features-grid { grid-template-columns: repeat(4, 1fr); }
         }
     </style>
 </head>
 <body>
+
+    <!-- Sticky Download CTA -->
+    <div class="sticky-cta">
+        <button class="cta-btn" onclick="window.open('https://www.mediafire.com/file/xc0eqs0oydaxc0b/Tips+E-Sports.apk/file', '_blank')">
+            <i class="fas fa-download"></i> অ্যাপ ডাউনলোড করুন
+        </button>
+    </div>
+
     <div class="container">
-        <!-- লোগো সেকশন - ছোট গোলাকার লোগো + ওপেন অ্যাপ বাটন (আপডেটেড) -->
-        <div class="logo-section">
-            <img src="https://i.postimg.cc/RFYfQSVd/Picsart-26-03-05-06-43-26-604.jpg" alt="Tips E-Sports Logo" class="logo-img">
-            
-            <!-- আপডেট: 'ওপেন অ্যাপ' এখন বাটন যা লিংক ওপেন করে -->
-            <a href="https://tips-e-sports-com.vercel.app/" target="_blank" class="open-app-btn">
-                ওপেন অ্যাপ
-            </a>
-        </div>
 
         <header>
-            <div class="brand-title">
-                <i class="fas fa-crown"></i> Tips E-Sports
-            </div>
-            <p class="subtitle">বাংলাদেশের প্রথম ও সেরা ই-স্পোর্টস লার্নিং অ্যাপ</p>
+            <div class="logo">Tips E-Sports</div>
+            <p class="tagline">বাংলাদেশের প্রথম ও সেরা ই-স্পোর্টস লার্নিং অ্যাপ</p>
 
-            <div class="extra-download">
-                <p>এখনই ডাউনলোড করে প্রো হয়ে উঠুন!</p>
-                <button class="glow-btn" onclick="window.open('https://www.mediafire.com/file/xc0eqs0oydaxc0b/Tips+E-Sports.apk/file', '_blank')">
-                    <i class="fas fa-download"></i> Tips E-Sports APK ডাউনলোড করুন
+            <!-- নতুন ছোট ওয়েব অ্যাপ বাটন – Tips E-Sports লোগোর ঠিক নিচে -->
+            <div class="webapp-btn-container">
+                <a href="https://tips-e-sports-com.vercel.app/" class="webapp-btn" target="_blank">
+                    <i class="fas fa-globe"></i> ওয়েব অ্যাপ
+                </a>
+            </div>
+
+            <div class="extra-cta">
+                <p>এখনই ডাউনলোড করে টুর্নামেন্টে জয়ী হোন!</p>
+                <button class="glow-cta" onclick="window.open('https://www.mediafire.com/file/xc0eqs0oydaxc0b/Tips+E-Sports.apk/file', '_blank')">
+                    <i class="fas fa-rocket"></i> APK ডাউনলোড করুন
                 </button>
             </div>
         </header>
 
-        <div class="hero">
-            <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/bDS5M7GE2bw" 
-                    title="কিভাবে আপনিও ESPORTS টুর্নামেন্ট খেলবেন তাও আবার ফ্রিতে.!🤯| Garena Free Fire | Toxic Jahid" 
+        <!-- YouTube Video -->
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/bDS5M7GE2bw" 
+                    title="ESPORTS টুর্নামেন্ট গাইড | Toxic Jahid" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
+                    allowfullscreen></iframe>
         </div>
 
-        <div class="stats">
-            <div class="stat">
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-item">
                 <div class="stat-number">২ লক্ষ+</div>
-                <div>টুর্নামেন্ট প্লেয়ার</div>
+                <div>প্লেয়ার</div>
             </div>
-            <div class="stat">
+            <div class="stat-item">
                 <div class="stat-number">৫০K+</div>
                 <div>টুর্নামেন্ট</div>
             </div>
-            <div class="stat">
+            <div class="stat-item">
                 <div class="stat-number">১০ লক্ষ+</div>
                 <div>পুরস্কার</div>
             </div>
-            <div class="stat">
+            <div class="stat-item">
                 <div class="stat-number">২৪/৭</div>
                 <div>সাপোর্ট</div>
             </div>
         </div>
 
-        <div class="features">
-            <div class="feature">
+        <!-- Features -->
+        <div class="features-grid">
+            <div class="feature-card">
                 <i class="fas fa-medal"></i>
                 <p>দৈনিক টুর্নামেন্ট</p>
             </div>
-            <div class="feature">
-                <i class="fas fa-money-bill-wave"></i>
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
                 <p>রিয়েল ক্যাশ প্রাইজ</p>
             </div>
-            <div class="feature">
+            <div class="feature-card">
                 <i class="fas fa-users"></i>
-                <p>সোলো/ডুও/স্কোয়াড</p>
+                <p>সোলো • ডুও • স্কোয়াড</p>
             </div>
-            <div class="feature">
-                <i class="fas fa-shield-alt"></i>
-                <p>ফেয়ার প্লে</p>
+            <div class="feature-card">
+                <i class="fas fa-shield-halved"></i>
+                <p>ফেয়ার প্লে & অ্যান্টি-চিট</p>
             </div>
         </div>
 
-        <h2 class="section-title"><i class="fas fa-trophy"></i> টুর্নামেন্ট ফিচার ও টিপস</h2>
+        <h2 class="section-title">টুর্নামেন্ট ফিচার ও প্রো টিপস</h2>
 
-        <div class="tournament-grid">
-            <div class="tournament-card">
-                <div class="t-card-title">১. দৈনিক সোলো ফুল ম্যাপ টুর্নামেন্ট</div>
-                <div class="t-card-desc">প্রতিদিন নতুন সোলো টুর্নামেন্ট। টপ ১-১০ পজিশনে থাকলে রিয়েল মানি + ডায়মন্ড পুরস্কার। অ্যান্টি-চিট সিস্টেম সহ ফেয়ার খেলা!</div>
+        <div class="tournament-list">
+            <div class="tournament-item">
+                <div class="t-item-title">দৈনিক সোলো ফুল ম্যাপ</div>
+                <p>প্রতিদিন নতুন টুর্নামেন্ট • টপ ১০-এ থাকলে রিয়েল মানি + ডায়মন্ড • ফেয়ার অ্যান্টি-চিট সিস্টেম</p>
             </div>
-            <div class="tournament-card">
-                <div class="t-card-title">২. ডুও/স্কোয়াড টুর্নামেন্ট</div>
-                <div class="t-card-desc">ফ্রেন্ডদের সাথে জয়েন করুন। টিম কমিউনিকেশন + স্ট্র্যাটেজি দিয়ে Conqueror র‍্যাঙ্ক পুশ করুন। বিশাল প্রাইজ পুল!</div>
+            <div class="tournament-item">
+                <div class="t-item-title">ডুও / স্কোয়াড মোড</div>
+                <p>ফ্রেন্ডদের সাথে খেলুন • টিম স্ট্র্যাটেজি + কমিউনিকেশন • বিশাল প্রাইজ পুল</p>
             </div>
-            <div class="tournament-card">
-                <div class="t-card-title">৩. লিডারবোর্ড ও র‍্যাঙ্কিং</div>
-                <div class="t-card-desc">রিয়েল-টাইম লিডারবোর্ড দেখুন। সবচেয়ে বেশি পয়েন্ট পেলে মাসিক বোনাস + এক্সক্লুসিভ রিওয়ার্ড।</div>
+            <div class="tournament-item">
+                <div class="t-item-title">রিয়েল-টাইম লিডারবোর্ড</div>
+                <p>লাইভ র‍্যাঙ্কিং • মাসিক বোনাস • এক্সক্লুসিভ রিওয়ার্ড</p>
             </div>
-            <div class="tournament-card">
-                <div class="t-card-title">৪. টুর্নামেন্ট জয়ের টিপস</div>
-                <div class="t-card-desc">Early loot → Safe rotation → Zone awareness। Drag shot প্র্যাকটিস করুন। টিমের সাথে ভালো কমিউনিকেট করুন। প্রো হয়ে উঠুন!</div>
+            <div class="tournament-item">
+                <div class="t-item-title">জয়ের প্রো টিপস</div>
+                <p>Early loot → Safe zone rotation → Drag shot প্র্যাকটিস → Team comms → Conqueror হয়ে উঠুন!</p>
             </div>
         </div>
 
         <footer>
-            <p>Tips E-Sports © ২০২৬ | বাংলাদেশের  #১ টুর্নামেন্ট প্ল্যাটফর্ম</p>
-            <a href="https://wa.me/qr/3NNXOBZFADXDM1" class="whatsapp-btn" target="_blank">
-                <i class="fab fa-whatsapp"></i> WhatsApp সাপোর্টে চ্যাট করুন
+            <p>Tips E-Sports © ২০২৬ | বাংলাদেশের সবচেয়ে ভরসাযোগ্য ই-স্পোর্টস প্ল্যাটফর্ম</p>
+            <a href="https://wa.me/qr/3NNXOBZFADXDM1" class="support-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> সাপোর্টে চ্যাট করুন
             </a>
         </footer>
+
     </div>
+
 </body>
 </html>
